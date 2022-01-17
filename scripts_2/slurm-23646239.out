@@ -1,0 +1,855 @@
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.5.2
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 54 BAM files                                     ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                           P /proj/snic2021-23-431/nobackup/aligned/Sam ... ||
+||                                                                            ||
+||             Output file : /proj/snic2021-23-431/nobackup/counts/counts ... ||
+||                 Summary : /proj/snic2021-23-431/nobackup/counts/counts ... ||
+||              Annotation : /proj/snic2018-8-400/nobackup/reference/PGSC ... ||
+||      Dir for temp files : /proj/snic2021-23-431/nobackup/counts            ||
+||                                                                            ||
+||                 Threads : 8                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /proj/snic2018-8-400/nobackup/reference/PGSC_DM_V ... ||
+||    Features : 141037                                                       ||
+||    Meta-features : 39028                                                   ||
+||    Chromosomes/contigs : 13                                                ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 66083319                                              ||
+||    Successfully assigned fragments : 37435467 (56.6%)                      ||
+||    Running time : 7.37 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 55046430                                              ||
+||    Successfully assigned fragments : 29712359 (54.0%)                      ||
+||    Running time : 6.08 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 66141779                                              ||
+||    Successfully assigned fragments : 36588042 (55.3%)                      ||
+||    Running time : 7.37 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 91421648                                              ||
+||    Successfully assigned fragments : 46403903 (50.8%)                      ||
+||    Running time : 10.86 minutes                                            ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 56427898                                              ||
+||    Successfully assigned fragments : 30370287 (53.8%)                      ||
+||    Running time : 6.11 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 55615395                                              ||
+||    Successfully assigned fragments : 28959214 (52.1%)                      ||
+||    Running time : 6.24 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 102008143                                             ||
+||    Successfully assigned fragments : 54058810 (53.0%)                      ||
+||    Running time : 12.12 minutes                                            ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 125994865                                             ||
+||    Successfully assigned fragments : 64633353 (51.3%)                      ||
+||    Running time : 34.74 minutes                                            ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 72631909                                              ||
+||    Successfully assigned fragments : 38174135 (52.6%)                      ||
+||    Running time : 8.38 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 33792321                                              ||
+||    Successfully assigned fragments : 19890059 (58.9%)                      ||
+||    Running time : 3.51 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 96850508                                              ||
+||    Successfully assigned fragments : 52351803 (54.1%)                      ||
+||    Running time : 11.54 minutes                                            ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 52774890                                              ||
+||    Successfully assigned fragments : 29505940 (55.9%)                      ||
+||    Running time : 5.64 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 74860110                                              ||
+||    Successfully assigned fragments : 37594890 (50.2%)                      ||
+||    Running time : 8.58 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 97831254                                              ||
+||    Successfully assigned fragments : 49764703 (50.9%)                      ||
+||    Running time : 11.30 minutes                                            ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 61906151                                              ||
+||    Successfully assigned fragments : 30060673 (48.6%)                      ||
+||    Running time : 7.21 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 78539007                                              ||
+||    Successfully assigned fragments : 41425842 (52.7%)                      ||
+||    Running time : 9.27 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 48506789                                              ||
+||    Successfully assigned fragments : 25286980 (52.1%)                      ||
+||    Running time : 5.54 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 109710713                                             ||
+||    Successfully assigned fragments : 57167580 (52.1%)                      ||
+||    Running time : 13.47 minutes                                            ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 54109326                                              ||
+||    Successfully assigned fragments : 28769932 (53.2%)                      ||
+||    Running time : 6.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 50940424                                              ||
+||    Successfully assigned fragments : 26298400 (51.6%)                      ||
+||    Running time : 5.69 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 62152747                                              ||
+||    Successfully assigned fragments : 32352699 (52.1%)                      ||
+||    Running time : 7.08 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 49876740                                              ||
+||    Successfully assigned fragments : 25189700 (50.5%)                      ||
+||    Running time : 5.64 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 47310134                                              ||
+||    Successfully assigned fragments : 24775088 (52.4%)                      ||
+||    Running time : 5.24 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 73186924                                              ||
+||    Successfully assigned fragments : 37953749 (51.9%)                      ||
+||    Running time : 8.17 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 53107681                                              ||
+||    Successfully assigned fragments : 27977716 (52.7%)                      ||
+||    Running time : 5.87 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 57067316                                              ||
+||    Successfully assigned fragments : 30035824 (52.6%)                      ||
+||    Running time : 6.50 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 39457059                                              ||
+||    Successfully assigned fragments : 22838739 (57.9%)                      ||
+||    Running time : 4.07 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 38869132                                              ||
+||    Successfully assigned fragments : 21906652 (56.4%)                      ||
+||    Running time : 4.12 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 53083128                                              ||
+||    Successfully assigned fragments : 29907677 (56.3%)                      ||
+||    Running time : 5.70 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 80278940                                              ||
+||    Successfully assigned fragments : 44224689 (55.1%)                      ||
+||    Running time : 9.12 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 45070204                                              ||
+||    Successfully assigned fragments : 21115097 (46.8%)                      ||
+||    Running time : 5.25 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 32884387                                              ||
+||    Successfully assigned fragments : 13650082 (41.5%)                      ||
+||    Running time : 3.75 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 43686452                                              ||
+||    Successfully assigned fragments : 20107580 (46.0%)                      ||
+||    Running time : 5.15 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 46691816                                              ||
+||    Successfully assigned fragments : 25472243 (54.6%)                      ||
+||    Running time : 5.28 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 66006121                                              ||
+||    Successfully assigned fragments : 34923002 (52.9%)                      ||
+||    Running time : 7.19 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 44012994                                              ||
+||    Successfully assigned fragments : 23888201 (54.3%)                      ||
+||    Running time : 4.84 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 41559038                                              ||
+||    Successfully assigned fragments : 21822442 (52.5%)                      ||
+||    Running time : 4.50 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 36049999                                              ||
+||    Successfully assigned fragments : 20069044 (55.7%)                      ||
+||    Running time : 3.88 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 106863045                                             ||
+||    Successfully assigned fragments : 27027774 (25.3%)                      ||
+||    Running time : 56.81 minutes                                            ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 41696102                                              ||
+||    Successfully assigned fragments : 20452755 (49.1%)                      ||
+||    Running time : 4.73 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 62879587                                              ||
+||    Successfully assigned fragments : 31515628 (50.1%)                      ||
+||    Running time : 7.51 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 58647902                                              ||
+||    Successfully assigned fragments : 29982387 (51.1%)                      ||
+||    Running time : 6.55 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 71837990                                              ||
+||    Successfully assigned fragments : 38855005 (54.1%)                      ||
+||    Running time : 8.05 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 55172900                                              ||
+||    Successfully assigned fragments : 28337614 (51.4%)                      ||
+||    Running time : 6.22 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 56977688                                              ||
+||    Successfully assigned fragments : 31422519 (55.1%)                      ||
+||    Running time : 6.24 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 58203600                                              ||
+||    Successfully assigned fragments : 30949752 (53.2%)                      ||
+||    Running time : 6.57 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 51302201                                              ||
+||    Successfully assigned fragments : 28156816 (54.9%)                      ||
+||    Running time : 5.57 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 40131006                                              ||
+||    Successfully assigned fragments : 20476130 (51.0%)                      ||
+||    Running time : 4.58 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 43890398                                              ||
+||    Successfully assigned fragments : 20033800 (45.6%)                      ||
+||    Running time : 5.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 127730725                                             ||
+||    Successfully assigned fragments : 64675943 (50.6%)                      ||
+||    Running time : 31.86 minutes                                            ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 41238895                                              ||
+||    Successfully assigned fragments : 19684182 (47.7%)                      ||
+||    Running time : 4.63 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 91256183                                              ||
+||    Successfully assigned fragments : 48926348 (53.6%)                      ||
+||    Running time : 10.64 minutes                                            ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 61467515                                              ||
+||    Successfully assigned fragments : 33533546 (54.6%)                      ||
+||    Running time : 6.92 minutes                                             ||
+||                                                                            ||
+|| Process BAM file /proj/snic2021-23-431/nobackup/aligned/Sample_TK-2780 ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 79987249                                              ||
+||    Successfully assigned fragments : 43430755 (54.3%)                      ||
+||    Running time : 8.99 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/proj/snic2021-23-431/n  ||
+|| obackup/counts/counts.txt"                                                 ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
